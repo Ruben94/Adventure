@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Adventure</string>
+    <string name="help">HELP COMANDS:</string>
+    <string name="texto_de_imagen">TEXTO DE PRUEBA</string>
+</resources>
