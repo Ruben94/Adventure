@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        roomImage = (ImageView) findViewById(R.id.activity_main_scene_image);
         northButton = (ImageButton) findViewById(R.id.activity_main_north_button);
         westButton = (ImageButton) findViewById(R.id.activity_main_west_button);
         eastButton = (ImageButton) findViewById(R.id.activity_main_east_button);
@@ -146,8 +147,8 @@ public class MainActivity extends AppCompatActivity {
     private void repaintScene(){
         roomDescription.setText(currentRoom.getDescription());
         String sceneImage = currentRoom.getImage();
-        int id = getResources().getIdentifier(sceneImage, "drawable", getPackageName();
-        sceneImage.setImageResource(id);
+        int id = getResources().getIdentifier(sceneImage, "drawable", getPackageName());
+        roomImage.setImageResource(id);
 
         if(currentRoom.getRoomNorth() !=null){
             northButton.setVisibility(View.VISIBLE);
