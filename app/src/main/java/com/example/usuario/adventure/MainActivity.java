@@ -13,6 +13,8 @@ import com.example.usuario.adventure.model.Item;
 import com.example.usuario.adventure.model.MapGenerator;
 import com.example.usuario.adventure.model.Room;
 
+import java.util.LinkedList;
+
 public class MainActivity extends AppCompatActivity {
 
     ImageButton helpButton;
@@ -83,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         lookButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+               lookRoom();
 
             }
         });
@@ -122,6 +125,19 @@ public class MainActivity extends AppCompatActivity {
 
         initGame();
         repaintScene();
+
+    }
+
+    private void lookRoom() {
+        String roomText = "";
+        roomText = roomText + currentRoom.getDescription() + "\n";
+
+        LinkedList<Item> roomItems = currentRoom.getItems();
+        for (Item item: roomItems){
+            roomText = roomText + item.getName() + "\n";
+        }
+
+        roomDescription.setText(roomText);
 
     }
 
