@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         inventoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                showInventory();
 
             }
         });
@@ -121,6 +122,12 @@ public class MainActivity extends AppCompatActivity {
 
         initGame();
         repaintScene();
+
+    }
+
+    private void showInventory() {
+        String inventoryText = inventory.print();
+        roomDescription.setText(inventoryText);
 
     }
 
